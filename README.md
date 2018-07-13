@@ -5,7 +5,8 @@ Stand-alone Singularity Container for somatic variant calling on the Ion Torrent
 We present PipeIT, an accurate variant call bioinformatics pipeline specific for Ion Torrent sequencing data. The pipeline has been enclosed into a Singularity image to allow easy and high throughput analyses.
 
 ### Installation
-PipeIT can be downloaded on our laboratory's website: http://oncogenomicslab.org/software-downloads/. No further installations are nrequired, all the dependencies needed to perform the whole analysis are already installed within the container.
+PipeIT can be downloaded on our laboratory's website: http://oncogenomicslab.org/software-downloads/. 
+No further installations are required, all the dependencies needed to perform the whole analysis are already installed within the container.
 
 ### Running the pipeline
 PipeIT can be executed by simply running this command: 

@@ -33,6 +33,7 @@ A Docker image has also been built for Docker users and can be found on the Dock
 Just like for the Singularity image, the Docker version of PipeIT can be launched using a simple command but, due to Docker's behaviour with files external to the container itself, the user needs to mount the folder containing the input file within the container itself.
 One easy option could be to create a folder called "data", use it to store all the input files and launch the command: 
 ```
-docker run  --mount type=bind,source="$(pwd)"/data,target=/PipeIT/data,consistency=consistent -it pipeit:latest [-u path/to/unmerged.bed -f genome.fasta]
+docker run  --mount type=bind,source="$(pwd)"/data,target=/PipeIT/data,consistency=consistent -it pipeit:latest -t nameoftumor.bam -n nameofnormal.bam -e nameofregion.bed [-u nameofunmerged.bed -f genome.fasta]
 ```
+Please notice that if you are using the "data" folder you must only use the name of the files, not the path.
 PipeIT will create the output files within this directory.

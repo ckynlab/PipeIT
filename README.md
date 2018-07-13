@@ -13,7 +13,7 @@ PipeIT can be executed by simply running this command:
 singularity run PipeIT.img -t path/to/tumor.bam -n path/to/normal.bam -e path/to/region.bed [-u path/to/unmerged.bed -f genome.fasta]
 ```
 The only mandatory input files can be directly obtained from the Ion Torrent, the tumor and the normal BAM files and the BED files from the sequenced region. The user can specify his own unmerged BED and the Fasta for the reference genome. Wherever these two files are not manually specified PipeIT will simply build the unmerged BED on its own and use the hg19 human genome, standard for the Ion Torrent sequencing at the time of the writing.
-***
+Unexperienced users should read Singularity's official documentation on the webpage http://singularity.lbl.gov/docs-mount to better know which folders and files are automatically mounted within the container and how to mount external ones.
 
 ### Workflow
 - Step1: Torrent Variant Caller is performed with lenient parameters on the input submitted bam files.
@@ -23,6 +23,7 @@ The only mandatory input files can be directly obtained from the Ion Torrent, th
 ### Software requirements
 PipeIT only needs a working Singularity installation. Please visit the official website (https://singularity.lbl.gov/) for more information.
 
+***
 
 ## Docker version
 A Docker image has also been built for Docker users and can be found on the Docker Hub page: https://hub.docker.com/r/ckynlab/pipeit/.

@@ -9,7 +9,7 @@ PipeIT can be downloaded on our laboratory's website: http://oncogenomicslab.org
 
 ### Running the pipeline
 PipeIT can be executed by simply running this command: 
-```bash
+```sh
 singularity run PipeIT.img -t path/to/tumor.bam -n path/to/normal.bam -e path/to/region.bed [-u path/to/unmerged.bed -f genome.fasta]
 ```
 The only mandatory input files can be directly obtained from the Ion Torrent, the tumor and the normal BAM files and the BED files from the sequenced region. The user can specify his own unmerged BED and the Fasta for the reference genome. Wherever these two files are not manually specified PipeIT will simply build the unmerged BED on its own and use the hg19 human genome, standard for the Ion Torrent sequencing at the time of the writing.
@@ -31,7 +31,7 @@ A Docker image has also been built for Docker users and can be found on the Dock
 ### Running the pipeline
 Just like for the Singularity image, the Docker version of PipeIT can be launched using a simple command but, due to Docker's behaviour with files external to the container itself, the user needs to mount the folder containing the input file within the container itself.
 One easy option could be to create a folder called "data", use it to store all the input files and launch the command: 
-```bash
+```sh
 docker run  --mount type=bind,source="$(pwd)"/data,target=/PipeIT/data,consistency=consistent -it pipeit:latest [-u path/to/unmerged.bed -f genome.fasta]
 ```
 PipeIT will create the output files within this directory.

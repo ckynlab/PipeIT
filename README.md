@@ -4,6 +4,9 @@ Stand-alone Singularity Container for somatic variant calling on the Ion Torrent
 ### Introduction
 We present PipeIT, an accurate variant call bioinformatics pipeline specific for Ion Torrent sequencing data. The pipeline has been enclosed into a Singularity image to allow easy and high throughput analyses.
 
+### Software requirements
+PipeIT only needs a working Singularity installation. Please visit the official website (https://singularity.lbl.gov/) for more information.
+
 ### Installation
 PipeIT can be downloaded on our laboratory's website: http://oncogenomicslab.org/software-downloads/. 
 No further installations are required, all the dependencies needed to perform the whole analysis are already installed within the container.
@@ -20,9 +23,6 @@ Unexperienced users should read Singularity's official documentation on the webp
 - Step1: Torrent Variant Caller is performed with lenient parameters on the input submitted bam files.
 - Step2: Multiallelic variants are split, left aligned, trimmed and merged once again with the Biallelic variants using BCFtools and GATK.
 - Step3: Using GATK once again, all the variants are filtered by removing regions with less than 10 reads, mutations with less than 8 reads and with a tumor-normal allele frequency lower than 10:1.
-
-### Software requirements
-PipeIT only needs a working Singularity installation. Please visit the official website (https://singularity.lbl.gov/) for more information.
 
 ***
 

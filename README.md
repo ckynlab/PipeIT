@@ -33,3 +33,4 @@ One easy option could be to create a folder called "data", use it to store all t
 ```bash
 docker run  --mount type=bind,source="$(pwd)"/data,target=/PipeIT/data,consistency=consistent -it pipeit:latest [-u path/to/unmerged.bed -f genome.fasta]
 ```
+PipeIT will create the output files within this directory.

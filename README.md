@@ -8,7 +8,7 @@ We present PipeIT, an accurate variant call bioinformatics pipeline specific for
 PipeIT only needs a working Singularity installation. Please visit the official website (https://singularity.lbl.gov/) for more information.
 
 ### Installation
-PipeIT can be downloaded on our laboratory's website: http://oncogenomicslab.org/software-downloads/. 
+PipeIT can be downloaded from our laboratory's website: http://oncogenomicslab.org/software-downloads/. 
 No further installations are required, all the dependencies needed to perform the whole analysis are already installed within the container.
 
 ### Running the pipeline

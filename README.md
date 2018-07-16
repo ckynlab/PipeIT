@@ -34,6 +34,12 @@ singularity run -B /myHPC/home/username/BAMfiles/ PipeIT.img -t ABSOLUTEpath/to/
 
 Unexperienced users should read [Singularity's official documentation](http://singularity.lbl.gov/docs-mount) to better know which folders and files are automatically mounted within the container and how to mount external ones.
 
+### Output files
+PipeIT will locally create a folder that will include both the final output, a VCF file, and the all the files producced by the intermediate steps. The latters will be automatically deleted by PipeIT at the end of the pipeline.
+
+Please note that an empty final VCF file means that PipeIT have found no significant mutation in the input sample.
+
+
 ### Workflow
 - Step1: Torrent Variant Caller is performed with lenient parameters on the input submitted bam files.
 - Step2: Multiallelic variants are split, left aligned, trimmed and merged once again with the Biallelic variants using BCFtools and GATK.

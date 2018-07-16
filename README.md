@@ -20,6 +20,7 @@ The only mandatory input files can be directly obtained from the Ion Torrent, th
 
 Please note that Singularity automatically mounts some folders inside the container:
 > Some of the bind paths are automatically derived (e.g. a user’s home directory) and some are statically defined (e.g. bind path in the Singularity configuration file). In the default configuration, the directories $HOME, /tmp, /proc, /sys, and /dev are among the system-defined bind points. 
+
 Files should be inside these folders in order to make them accessible to Singularity, otherwise PipeIT won't be able to see and use them.
 User can also manually mount additional files and folders using the -B flag. For example:
 ```

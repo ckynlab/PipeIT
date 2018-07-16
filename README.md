@@ -21,7 +21,7 @@ The only mandatory input files can be directly obtained from the Ion Torrent, th
 While specifying input files please note that due to Singularity's:
 - Paths to input files have to be *Relative* for files in the host
 >  ... relative paths will resolve outside the container, and fully qualified paths will resolve inside the container.
-Please read [http://singularity.lbl.gov/archive/docs/v2-2/faq ](Singularity's FAQ page) .
+Please read [Singularity's FAQ page](http://singularity.lbl.gov/archive/docs/v2-2/faq) .
 - Singularity automatically mounts some folders inside the container:
 > Some of the bind paths are automatically derived (e.g. a user’s home directory) and some are statically defined (e.g. bind path in the Singularity configuration file). In the default configuration, the directories $HOME, /tmp, /proc, /sys, and /dev are among the system-defined bind points. 
 
@@ -31,7 +31,7 @@ User can also manually mount additional files and folders using the -B flag. For
 singularity run -B /myHPC/home/username/BAMfiles/ PipeIT.img -t path/to/tumor.bam -n path/to/normal.bam -e path/to/region.bed
 ```
 
-Unexperienced users should read [http://singularity.lbl.gov/docs-mount](Singularity's official documentation) to better know which folders and files are automatically mounted within the container and how to mount external ones.
+Unexperienced users should read [Singularity's official documentation](http://singularity.lbl.gov/docs-mount) to better know which folders and files are automatically mounted within the container and how to mount external ones.
 
 ### Workflow
 - Step1: Torrent Variant Caller is performed with lenient parameters on the input submitted bam files.

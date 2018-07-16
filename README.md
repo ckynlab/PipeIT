@@ -41,7 +41,7 @@ Unexperienced users should read [Singularity's official documentation](http://si
 ***
 
 ## Docker version
-A Docker image has also been built for Docker users and can be found on the Docker Hub page: https://hub.docker.com/r/ckynlab/pipeit/.
+A Docker image has also been built for Docker users and can be found on the Docker Hub page: https://hub.docker.com/r/ckynlab/pipeit/. We suggest to use the Singularity version of PipeIT because the pipeline was defined to work on HPC environments, execution times on local machines will not be optimal.
 
 ### Running the pipeline
 Just like for the Singularity image, the Docker version of PipeIT can be launched using a simple command but, due to Docker's behaviour with files external to the container itself, the user needs to mount the folder containing the input file within the container itself.

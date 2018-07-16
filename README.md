@@ -20,6 +20,7 @@ The only mandatory input files can be directly obtained from the Ion Torrent, th
 
 While specifying input files please note that due to Singularity's:
 - Paths to input files have to be *Relative* for files in the host
+>  ... relative paths will resolve outside the container, and fully qualified paths will resolve inside the container.
 - Singularity automatically mounts some folders inside the container:
 > Some of the bind paths are automatically derived (e.g. a user’s home directory) and some are statically defined (e.g. bind path in the Singularity configuration file). In the default configuration, the directories $HOME, /tmp, /proc, /sys, and /dev are among the system-defined bind points. 
 

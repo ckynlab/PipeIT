@@ -19,7 +19,7 @@ singularity run PipeIT.img -t path/to/tumor.bam -n path/to/normal.bam -e path/to
 The only mandatory input files can be directly obtained from the Ion Torrent, the tumor and the normal BAM files and the BED files from the sequenced region. The user can specify his own unmerged BED and the Fasta for the reference genome. Wherever these two files are not manually specified PipeIT will simply build the unmerged BED on its own and use the hg19 human genome, standard for the Ion Torrent sequencing at the time of the writing.
 
 While specifying input files please note that due to Singularity's nature:
-- Paths to input files have to be *Relative* for files in the host
+- Paths to input files have to be *Relative*
 >  ... relative paths will resolve outside the container, and fully qualified paths will resolve inside the container.
 Please read [Singularity's FAQ page](http://singularity.lbl.gov/archive/docs/v2-2/faq) for more information about this.
 - Singularity automatically mounts some folders inside the container:

@@ -31,7 +31,7 @@ User can also manually mount additional files and folders using the -B flag. For
 singularity run -B /myHPC/home/username/BAMfiles/ PipeIT.img -t path/to/tumor.bam -n path/to/normal.bam -e path/to/region.bed
 ```
 
-Unexperienced users should read  [http://singularity.lbl.gov/docs-mount] (Singularity's official documentation on the webpage) to better know which folders and files are automatically mounted within the container and how to mount external ones.
+Unexperienced users should read [http://singularity.lbl.gov/docs-mount](Singularity's official documentation) to better know which folders and files are automatically mounted within the container and how to mount external ones.
 
 ### Workflow
 - Step1: Torrent Variant Caller is performed with lenient parameters on the input submitted bam files.

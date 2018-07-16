@@ -29,7 +29,7 @@ Please read [Singularity's FAQ page](http://singularity.lbl.gov/archive/docs/v2-
 Input files should be inside these folders in order to make them accessible to Singularity, otherwise PipeIT won't be able to see and use them.
 User can also manually mount additional files and folders using the -B flag. For example:
 ```
-singularity run -B /myHPC/home/username/BAMfiles/ PipeIT.img -t path/to/tumor.bam -n path/to/normal.bam -e path/to/region.bed
+singularity run -B /myHPC/home/username/BAMfiles/ PipeIT.img -t ABSOLUTEpath/to/tumor.bam -n ABSOLUTEpath/to/normal.bam -e RELATIVEpath/to/region.bed
 ```
 
 Unexperienced users should read [Singularity's official documentation](http://singularity.lbl.gov/docs-mount) to better know which folders and files are automatically mounted within the container and how to mount external ones.

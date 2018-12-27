@@ -14,9 +14,9 @@ No further installations are required, all the dependencies needed to perform th
 ### Running the pipeline
 PipeIT can be executed by simply running this command: 
 ```
-singularity run PipeIT.img -t path/to/tumor.bam -n path/to/normal.bam -e path/to/region.bed [-u path/to/unmerged.bed -f path/to/genome.fasta -d path/to/genome.dict]
+singularity run PipeIT.img -t path/to/tumor.bam -n path/to/normal.bam -e path/to/region.bed [-u path/to/unmerged.bed]
 ```
-The only mandatory input files can be directly obtained from the Ion Torrent, the tumor and the normal BAM files and the BED files from the sequenced region. The user can specify his own unmerged BED and the Fasta for the reference genome. Wherever these two files are not manually specified PipeIT will simply build the unmerged BED on its own and use the hg19 human genome, standard for the Ion Torrent sequencing at the time of the writing.
+The only mandatory input files can be directly obtained from the Ion Torrent, the tumor and the normal BAM files and the BED files from the sequenced region. The user can specify his own unmerged BED. Wherever this file is not manually specified PipeIT will simply build the unmerged BED on its own.
 
 While specifying input files please note that due to Singularity's nature:
 - Paths to input files have to be *Relative*
@@ -50,11 +50,13 @@ Please note that an empty final VCF file means that PipeIT have found no signifi
 ## Docker version
 A Docker image has also been built for Docker users and can be found on the Docker Hub page: https://hub.docker.com/r/ckynlab/pipeit/. We suggest to use the Singularity version of PipeIT because the pipeline was defined to work on HPC environments, execution times on local machines will not be optimal.
 
+**Please note that the Docker image may not be up-to-date, for a proper execution please use the Singularity image or contact us**
+
 ### Running the pipeline
 Just like for the Singularity image, the Docker version of PipeIT can be launched using a simple command but, due to Docker's behaviour with files external to the container itself, the user needs to mount the folder containing the input file within the container itself.
 One easy option could be to create a folder called "data", use it to store all the input files and launch the command: 
 ```
-docker run  --mount type=bind,source="$(pwd)"/data,target=/PipeIT/data,consistency=consistent -it pipeit:latest -t nameoftumor.bam -n nameofnormal.bam -e nameofregion.bed [-u nameofunmerged.bed -f genome.fasta -d genome.dict]
+docker run  --mount type=bind,source="$(pwd)"/data,target=/PipeIT/data,consistency=consistent -it pipeit:latest -t nameoftumor.bam -n nameofnormal.bam -e nameofregion.bed [-u nameofunmerged.bed]
 ```
 Please notice that if you are using the "data" folder you must only use the name of the files, not the path.
 PipeIT will create the output files within this directory.

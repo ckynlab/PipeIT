@@ -41,7 +41,7 @@ Please note that an empty final VCF file means that PipeIT have found no mutatio
 
 ### Workflow
 <p align="right">
-![Workflow](/images/Workflow.png)
+![Workflow](images/Workflow.png)
 </p>
 
 - Step 1 (Variant calling): Variant calling using the Torrent Variant Caller is performed.

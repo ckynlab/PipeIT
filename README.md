@@ -40,9 +40,7 @@ PipeIT will locally create a folder that will include both the final output (a V
 Please note that an empty final VCF file means that PipeIT have found no mutation in the input sample.
 
 ### Workflow
-<p align="right">
-![Workflow](https://github.com/ckynlab/PipeIT/blob/master/images/Workflow.png)
-</p>
+<img src="https://github.com/ckynlab/PipeIT/blob/master/images/Workflow.png" align="right" width="300" >
 
 - Step 1 (Variant calling): Variant calling using the Torrent Variant Caller is performed.
 - Step 2 (Post-processing multiallelic variants): Multiallelic variants are split, left aligned, trimmed and merged once again with the biallelic variants using BCFtools and GATK.

@@ -14,9 +14,21 @@ No further installation is required, all the dependencies needed to perform the 
 ### Running the pipeline
 PipeIT can be executed by simply running this command: 
 ```
-singularity run PipeIT.img -t path/to/tumor.bam -n path/to/normal.bam -e path/to/region.bed [-u path/to/unmerged.bed]
+singularity run PipeIT.img -t path/to/tumor.bam -n path/to/normal.bam -e path/to/region.bed 
 ```
-The mandatory input files are the tumor and the normal BAM files, and the BED file of the targeted regions. The BAM files can be obtained directly from the Torrent Server. Optionally, the user can specify their own unmerged BED. If this file is not provided, PipeIT will build it.
+The mandatory input files are the tumor and the normal BAM files, and the BED file of the targeted regions. The BAM files can be obtained directly from the Torrent Server. 
+A number of optional parameters have been added in order to give more freedom to the user.
+It is possible to:
+* Submit the unmerged BED. If this file is not provided, PipeIT will build it.
+* Specify the output filename. If not provided PipeIT will use the tumor bam's name.
+* Skip the annotation.
+* Keep all the intermediate files produced during the execution of the pipeline.
+* Use different values for variant calling and filtering.
+
+For more information please run 
+```
+singularity run PipeIT.img --help
+```
 
 While specifying input files please note that due to Singularity's nature:
 - Paths to input files have to be *Relative*

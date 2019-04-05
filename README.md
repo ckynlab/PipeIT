@@ -47,7 +47,7 @@ singularity run -B /myHPC/home/username/files/ PipeIT.img -t RELATIVEpath/to/tum
 For a comprehensive description on which folders are automatically mounted within the container and on how to mount additional folders, users should read [Singularity's official documentation](http://singularity.lbl.gov/docs-mount).
 
 ### Output files
-PipeIT will locally create a folder that will include both the final output (a VCF file), and the intermediate files . The latter will be automatically deleted by PipeIT at the end of its execution.
+PipeIT will locally create a folder that will include both the final output (a VCF file), and the intermediate files . The latter will be automatically deleted by PipeIT at the end of its execution, unless differently indicated.
 
 Please note that an empty final VCF file means that PipeIT have found no mutation in the input sample.
 

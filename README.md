@@ -68,7 +68,7 @@ Please note that an empty final VCF file means that PipeIT have found no mutatio
 - Step 4 (Variant annotation): SnpEff annotation using canonical transcripts.
 
 ### Tumor only Workflow
-<img src="https://github.com/ckynlab/PipeIT/blob/master/images/Workflow.png" align="right" width="300" >
+<img src="https://github.com/ckynlab/PipeIT/blob/master/images/Workflow.png" align="left" width="300" >
 
 - Step 1 (Variant calling): Variant calling using the Torrent Variant Caller is performed.
 - Step 2 (Post-processing multiallelic variants): Multiallelic variants are split, left aligned, trimmed and merged once again with the biallelic variants using BCFtools and GATK.

@@ -31,7 +31,13 @@ Alternatively, PipeIT can be executed for a tumor only analysis. Please keep in 
 singularity run PipeIT.img -k path/to/tumor.bam -e path/to/region.bed -c path/to/annovar/humandb/folder 
 ```
 The mandatory input files are the tumor BAM, the BED file of the targeted regions and the folder with Annovar's database files.
-
+Please note that you need to download manually Annovar's database files, either directly with Annovar or using PipeIT.
+In the latter case the commands are:
+```
+singularity exec PipeIT.img annotate_variation.pl -downdb -webfrom annovar -buildver hg19 esp6500siv2_all humandb/
+singularity exec PipeIT.img annotate_variation.pl -downdb -webfrom annovar -buildver hg19 1000g2015aug humandb/
+singularity exec PipeIT.img annotate_variation.pl -downdb -webfrom annovar -buildver hg19 exac03 humandb/
+```
 
 For more information on both the analyses please run:
 ```

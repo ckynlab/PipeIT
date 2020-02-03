@@ -73,6 +73,14 @@ Please note that an empty final VCF file means that PipeIT have found no mutatio
 - Step 3 (Variant filtration): Variants outside of the target regions are removed. Hotspot variants are whitelisted. Variants covered by fewer than 10 reads in either the tumor or the matched normal sample or supported by fewer than 8 reads are removed. Furthermore, variants not likely to be somatic based on the ratio of VAF between tumor and normal (default to minimum 10:1) are also removed. Given the clinical significance of many hotspot mutations, we conservatively whitelist hotspot mutations even if they do not pass all read count and/or VAF filters. We recommend reviewing the whitelisted hotspot variants that did not pass the above read count and/or VAF filters. 
 - Step 4 (Variant annotation): SnpEff annotation using canonical transcripts.
 
+
+
+
+
+
+
+
+
 ### Tumor only Workflow
 <img src="https://github.com/ckynlab/PipeIT/blob/master/images/TOdiagram.png" align="left" width="300" >
 

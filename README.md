@@ -25,7 +25,15 @@ It is possible to:
 * Keep all the intermediate files produced during the execution of the pipeline.
 * Use different values for variant calling and filtering.
 
-For more information please run 
+
+Alternatively, PipeIT can be executed for a tumor only analysis. Please keep in mind that a tumor-normal analysis will return more accurate results. The standard tumor only analysis can be executed with this command:
+```
+singularity run PipeIT.img -k path/to/tumor.bam -e path/to/region.bed -c path/to/annovar/humandb/folder 
+```
+The mandatory input files are the tumor BAM, the BED file of the targeted regions and the folder with Annovar's database files.
+
+
+For more information on both the analyses please run:
 ```
 singularity run PipeIT.img --help
 ```
@@ -51,13 +59,24 @@ PipeIT will locally create a folder that will include both the final output (a V
 
 Please note that an empty final VCF file means that PipeIT have found no mutation in the input sample.
 
-### Workflow
+### Tumor-Normal Workflow
 <img src="https://github.com/ckynlab/PipeIT/blob/master/images/Workflow.png" align="right" width="300" >
 
 - Step 1 (Variant calling): Variant calling using the Torrent Variant Caller is performed.
 - Step 2 (Post-processing multiallelic variants): Multiallelic variants are split, left aligned, trimmed and merged once again with the biallelic variants using BCFtools and GATK.
 - Step 3 (Variant filtration): Variants outside of the target regions are removed. Hotspot variants are whitelisted. Variants covered by fewer than 10 reads in either the tumor or the matched normal sample or supported by fewer than 8 reads are removed. Furthermore, variants not likely to be somatic based on the ratio of VAF between tumor and normal (default to minimum 10:1) are also removed. Given the clinical significance of many hotspot mutations, we conservatively whitelist hotspot mutations even if they do not pass all read count and/or VAF filters. We recommend reviewing the whitelisted hotspot variants that did not pass the above read count and/or VAF filters. 
 - Step 4 (Variant annotation): SnpEff annotation using canonical transcripts.
+
+### Tumor only Workflow
+<img src="https://github.com/ckynlab/PipeIT/blob/master/images/Workflow.png" align="right" width="300" >
+
+- Step 1 (Variant calling): Variant calling using the Torrent Variant Caller is performed.
+- Step 2 (Post-processing multiallelic variants): Multiallelic variants are split, left aligned, trimmed and merged once again with the biallelic variants using BCFtools and GATK.
+- Step 3 (Annotations): Annovar is used to annotate on 3 different databases (1000 Genomes Project, Exome Aggregation Consortium (ExAC) and NHLBI-ESP project) the variants found by TVC. Furthermore, GATK is used to see if the variants found are in homopolymer regions.
+- Step 4 (Variant filtration): Variants outside of the target regions are removed.  Variants covered by fewer than 10 reads in either the tumor or the matched normal sample or supported by fewer than 8 reads are removed. Previous annotations are used to remove any variant found in more than the 5% of the whole cohorts in at least one of the three databases or in a homopolymer region longer than 4. Furthermore, variants not likely to be somatic based on the ratio of VAF between tumor and normal (default to minimum 10:1) are also removed. If this ratio is higher than 0.9 or lower than 0.6 the population databases are used again to remove any variant found, no matter how often. 
+- Step 5 (Pool of normal filtering): A list of variants found in a pool of normal samples unmatched with the original tumor samples are used to remove possible germline mutations. Hotspot variants are whitelisted. Given the clinical significance of many hotspot mutations, we conservatively whitelist hotspot mutations even if they do not pass any of these filters. We recommend reviewing the whitelisted hotspot variants that did not pass the above read count and/or VAF filters. 
+
+
 
 ### Versions
 

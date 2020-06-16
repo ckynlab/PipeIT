@@ -94,6 +94,7 @@ Please note that an empty final VCF file means that PipeIT have found no mutatio
 * 1.2.1 Added the option for an anlysis without a paired normal bam file
 * 1.2.2-3 Bug fixes
 * 1.2.4 Added Exome Aggregation Consortium (ExAC) in the annotation and filtering in the tumor only analysis
+* 1.2.5-6 Bug fixes
 
 ***
 

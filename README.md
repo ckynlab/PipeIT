@@ -94,6 +94,7 @@ If you use PipeIT, please cite Garofoli et al, *PipeIT: A Singularity Container 
 * 1.2.2-3 Bug fixes
 * 1.2.4   Added Exome Aggregation Consortium (ExAC) in the annotation and filtering in the tumor only analysis
 * 1.2.5-6 Bug fixes
+* 1.2.7   "Standard" Pool of normals for the Tumor-only workflow removed, now the user submitted Pool of normal is no longer optional. More bug fixes.
 
 
 

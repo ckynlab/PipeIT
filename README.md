@@ -28,7 +28,7 @@ It is possible to:
 
 Alternatively, PipeIT can be executed for a tumor-only analysis (alpha status, under active development). Please keep in mind that a tumor-normal analysis will usually provide more accurate results. The standard tumor-only analysis can be executed with this command:
 ```
-singularity run PipeIT.img -k path/to/tumor.bam -e path/to/region.bed -c path/to/annovar/humandb/folder 
+singularity run PipeIT.img -k path/to/tumor.bam -e path/to/region.bed -c path/to/annovar/humandb/folder -b path/to/dbSNP/file.vcf -d path/to/PoN/file.vcf
 ```
 The mandatory input files are the tumor BAM, the BED file of the targeted regions, the VCF file for the mutations found in a pool of normal samples, the dbSNP file in VCF format and the folder with the Annovar database files.
 Please note that you need to download manually Annovar's database files, either directly with Annovar or using PipeIT.

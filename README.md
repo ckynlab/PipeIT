@@ -28,9 +28,9 @@ It is possible to:
 
 Alternatively, PipeIT can be executed for a tumor-only analysis (alpha status, under active development). Please keep in mind that a tumor-normal analysis will usually provide more accurate results. The standard tumor-only analysis can be executed with this command:
 ```
-singularity run PipeIT.img -k path/to/tumor.bam -e path/to/region.bed -c path/to/annovar/humandb/folder -b path/to/dbSNP/file.vcf -d path/to/PoN/file.vcf
+singularity run PipeIT.img -k path/to/tumor.bam -e path/to/region.bed -c path/to/annovar/humandb/folder -d path/to/PoN/file.vcf
 ```
-The mandatory input files are the tumor BAM, the BED file of the targeted regions, the VCF file for the mutations found in a pool of normal samples, the dbSNP file in VCF format and the folder with the Annovar database files.
+The mandatory input files are the tumor BAM, the BED file of the targeted regions, the VCF file for the mutations found in a pool of normal samples and the folder with the Annovar database files.
 Please note that you need to download manually Annovar's database files, either directly with Annovar or using PipeIT.
 In the latter case the commands are:
 ```
@@ -99,7 +99,7 @@ If you use PipeIT, please cite Garofoli et al, *PipeIT: A Singularity Container 
 * 1.2.4   Added Exome Aggregation Consortium (ExAC) in the annotation and filtering in the tumor only analysis
 * 1.2.5-6 Bug fixes
 * 1.2.7   Bug fixes
-
+* 1.2.8   Removed the need for the dbSNP annotation. Bug fixes
 
 
 ## Docker version

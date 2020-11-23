@@ -92,15 +92,17 @@ If you use PipeIT, please cite Garofoli et al, *PipeIT: A Singularity Container 
 
 ### Version history
 
-* 1.1.0   First release
-* 1.1.1-3 Bug fixes
-* 1.2.1   Added the option for an analysis without a paired normal bam file
-* 1.2.2-3 Bug fixes
-* 1.2.4   Added Exome Aggregation Consortium (ExAC) in the annotation and filtering in the tumor only analysis
-* 1.2.5-6 Bug fixes
-* 1.2.7   Bug fixes
-* 1.2.8   Removed the need for the dbSNP annotation. Bug fixes
-
+* 1.1.0     First release
+* 1.1.1-3   Bug fixes
+* 1.2.1     Added the option for an analysis without a paired normal bam file
+* 1.2.2-3   Bug fixes
+* 1.2.4     Added Exome Aggregation Consortium (ExAC) in the annotation and filtering in the tumor only analysis
+* 1.2.5-6   Bug fixes
+* 1.2.7     Bug fixes
+* 1.2.8     Removed the need for the dbSNP annotation. Bug fixes
+* 1.2.9-10  Bug fixes. Added the Genome Aggregation Database (gnomAD) in the annotation and filtering in the tumor only analysis
+* 1.2.11    Command arguments' letters changed, now -t (--tumor) is used for both the analyses. PipeIT will pick one of the two pipelines base on the presence of the -n (--normal) germline control or -c (--humandb) Annovar databaes' files. The -r (--homopolymer_run) argument for the homopolymer filter value for the tumor-only pipeline was added, making this filter not mandatory anymore. Added more arguments for the tumor-only pipeline.
+* 1.2.12-15 Bug fixes. Panel of normals filter is not mandatory anymore. If the -d (--pon) argument is not provided this step is not performed.
 
 ## Docker version
 

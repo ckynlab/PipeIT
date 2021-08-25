@@ -176,8 +176,8 @@ If you use PipeIT, please cite Garofoli et al, *PipeIT: A Singularity Container 
 * **1.2.11**    Command arguments' letters changed, now -t (--tumor) is used for both the analyses. PipeIT will pick one of the two pipelines base on the presence of the -n (--normal) germline control or -c (--humandb) Annovar databaes' files. The -r (--homopolymer_run) argument for the homopolymer filter value for the tumor-only pipeline was added, making this filter not mandatory anymore. Added more arguments for the tumor-only pipeline.
 * **1.2.12-15** Bug fixes. Panel of normals filter is not mandatory anymore. If the -d (--pon) argument is not provided this step is not performed.
 
-//Moreover, some of the annotation steps need the dbSNP VCF file, which can be downloaded with:
+<!--Moreover, some of the annotation steps need the dbSNP VCF file, which can be downloaded with:
 //```
 //wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/hg19/dbsnp_138.hg19.vcf.gz
-//```
+//```-->
 
